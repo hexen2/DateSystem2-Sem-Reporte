@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4bab45ebf59d4d40acb9060a090d27cd" Name="Diagram1">
+        <EntityTypeShape EntityType="MSOSModel.C_Compra" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.F_FornecedoresContatos" Width="1.5" PointX="9.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.F_FornecedorPessoa" Width="1.5" PointX="12" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.G_Tecnicos" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.O_OrdemServico" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.O_Servico" Width="1.5" PointX="16.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_Cidade" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_ClientePessoa" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_Estado" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_Fisica" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_Juridica" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_PessoaContatos" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_Produto" Width="1.5" PointX="14.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_ProdutoGrupo" Width="1.5" PointX="12" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.P_ProdutoMarca" Width="1.5" PointX="12" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MSOSModel.V_Venda" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MSOSModel.FK_ID_COMPRA_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_FORNECEDORCONTATO" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_TECNICO" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_PESSOACLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_CIDADE" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_CONTATOP" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_PESSOA_FISICA" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_PESSOA_JURIDICA" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_PRODUTO_GRUPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MSOSModel.FK_ID_PRODUTO_MARCA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

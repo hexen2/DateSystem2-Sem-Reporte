@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MSOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="C_Compra">
+          <Key>
+            <PropertyRef Name="ID_COMPRA" />
+          </Key>
+          <Property Name="ID_COMPRA" Type="int" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="40" />
+          <Property Name="DATA_EMISSA" Type="date" />
+          <Property Name="DATA_ENTREGA" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MSOS.dbo.C_ItemCompra' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="C_ItemCompra">
+          <Property Name="ID_COMPRA" Type="int" />
+          <Property Name="ID_PRODUTO" Type="int" />
+          <Property Name="QUANTIDADE" Type="int" />
+          <Property Name="VALOR" Type="float" />
+        </EntityType>-->
+        <EntityType Name="F_FornecedoresContatos">
+          <Key>
+            <PropertyRef Name="ID_CONTATOF" />
+          </Key>
+          <Property Name="ID_CONTATOF" Type="int" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="40" />
+          <Property Name="ABREVIACAO" Type="varchar" MaxLength="20" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="13" />
+          <Property Name="CELULAR" Type="varchar" MaxLength="11" />
+          <Property Name="OBSERVACAO" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="F_FornecedorPessoa">
+          <Key>
+            <PropertyRef Name="ID_FORNECEDOR" />
+          </Key>
+          <Property Name="ID_FORNECEDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_CONTATOF" Type="int" />
+          <Property Name="NOME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NOME_CONTATO" Type="varchar" MaxLength="30" />
+          <Property Name="CARGO_CONTATO" Type="varchar" MaxLength="20" />
+          <Property Name="ENDERECO" Type="varchar" MaxLength="50" />
+          <Property Name="CIDADE" Type="varchar" MaxLength="20" />
+          <Property Name="UF" Type="varchar" MaxLength="2" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="TELEFONE2" Type="varchar" MaxLength="13" />
+          <Property Name="FAX_TELEFONE" Type="varchar" MaxLength="13" />
+          <Property Name="TELEX_TELEFONE" Type="varchar" MaxLength="13" />
+          <Property Name="SITUACAO" Type="char" MaxLength="1" />
+          <Property Name="BAIRRO" Type="varchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="40" />
+          <Property Name="CEP" Type="varchar" MaxLength="8" />
+          <Property Name="OBSERVACAO" Type="varchar" MaxLength="40" />
+          <Property Name="TIPO" Type="varchar" MaxLength="20" />
+          <Property Name="CP_MUNICIPIO" Type="varchar" MaxLength="20" />
+          <Property Name="MUNICIPIO" Type="varchar" MaxLength="20" />
+          <Property Name="PAIS" Type="varchar" MaxLength="20" />
+          <Property Name="DESC_PAIS" Type="varchar" MaxLength="20" />
+          <Property Name="NIVEL" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="G_Tecnicos">
+          <Key>
+            <PropertyRef Name="ID_TECNICO" />
+          </Key>
+          <Property Name="ID_TECNICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ABREVIACAO" Type="varchar" MaxLength="20" />
+          <Property Name="ENDERECO" Type="varchar" MaxLength="50" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="TELEFONE2" Type="varchar" MaxLength="13" />
+          <Property Name="CELULAR" Type="varchar" MaxLength="11" />
+          <Property Name="CELULAR2" Type="varchar" MaxLength="11" />
+          <Property Name="SITUACAO" Type="char" MaxLength="1" />
+          <Property Name="BAIRRO" Type="varchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="40" />
+          <Property Name="CEP" Type="varchar" MaxLength="8" />
+          <Property Name="OBSERVACAO" Type="varchar" MaxLength="40" />
+          <Property Name="SEXO" Type="char" MaxLength="1" />
+          <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="RG" Type="varchar" MaxLength="9" />
+          <Property Name="DATA_NASCIMENTO" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MSOS.dbo.O_ItemServico' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="O_ItemServico">
+          <Property Name="ID_ORDEM_SERVICO" Type="int" />
+          <Property Name="ID_SERVICO" Type="int" />
+          <Property Name="VALOR" Type="float" />
+        </EntityType>-->
+        <EntityType Name="O_OrdemServico">
+          <Key>
+            <PropertyRef Name="ID_ORDEM_SERVICO" />
+          </Key>
+          <Property Name="ID_ORDEM_SERVICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PESSOA_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="ID_SERVICO" Type="int" Nullable="false" />
+          <Property Name="NUMERO_OS" Type="int" />
+          <Property Name="ID_CONTATOP" Type="int" />
+          <Property Name="ID_TECNICO" Type="int" />
+          <Property Name="ORIGEM_CHAMADO" Type="varchar" MaxLength="40" />
+          <Property Name="SERVICOS_EXECUTADOS" Type="varchar" MaxLength="40" />
+          <Property Name="VALOR_OBRA" Type="varchar" MaxLength="40" />
+          <Property Name="TECNICO_SERVICO" Type="varchar" MaxLength="20" />
+          <Property Name="DATA_INICIO" Type="datetime" />
+          <Property Name="DATA_FINAL" Type="datetime" />
+          <Property Name="ESTADO" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="O_Servico">
+          <Key>
+            <PropertyRef Name="ID_SERVICO" />
+          </Key>
+          <Property Name="ID_SERVICO" Type="int" Nullable="false" />
+          <Property Name="ID_PRODUTO" Type="int" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="40" />
+          <Property Name="VALOR" Type="float" />
+        </EntityType>
+        <EntityType Name="P_Cidade">
+          <Key>
+            <PropertyRef Name="ID_CIDADE" />
+          </Key>
+          <Property Name="ID_CIDADE" Type="int" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+          <Property Name="SIGLA_CIDADE" Type="varchar" MaxLength="4" />
+          <Property Name="NOME" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="P_ClientePessoa">
+          <Key>
+            <PropertyRef Name="ID_PESSOA" />
+          </Key>
+          <Property Name="ID_PESSOA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PESSOA_TIPO" Type="int" />
+          <Property Name="ID_CIDADE" Type="int" />
+          <Property Name="ID_COMPRA" Type="int" />
+          <Property Name="ID_CONTATOP" Type="int" />
+          <Property Name="ID_MS" Type="int" />
+          <Property Name="ID_OS" Type="int" />
+          <Property Name="NOME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ENDERECO" Type="varchar" MaxLength="50" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="TELEFONE2" Type="varchar" MaxLength="13" />
+          <Property Name="FAX_TELEFONE" Type="varchar" MaxLength="13" />
+          <Property Name="TELEX_TELEFONE" Type="varchar" MaxLength="13" />
+          <Property Name="SITUACAO" Type="char" MaxLength="1" />
+          <Property Name="BAIRRO" Type="varchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="40" />
+          <Property Name="CEP" Type="varchar" MaxLength="8" />
+          <Property Name="OBSERVACAO" Type="varchar" MaxLength="40" />
+          <Property Name="TIPO" Type="varchar" MaxLength="20" />
+          <Property Name="CP_MUNICIPIO" Type="varchar" MaxLength="20" />
+          <Property Name="MUNICIPIO" Type="varchar" MaxLength="20" />
+          <Property Name="PAIS" Type="varchar" MaxLength="20" />
+          <Property Name="DESC_PAIS" Type="varchar" MaxLength="20" />
+          <Property Name="NIVEL" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="P_Estado">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+          <Property Name="SIGLA_ESTADO" Type="varchar" MaxLength="4" />
+          <Property Name="NOME" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="P_Fisica">
+          <Key>
+            <PropertyRef Name="ID_PESSOA_FISICA" />
+          </Key>
+          <Property Name="ID_PESSOA_FISICA" Type="int" Nullable="false" />
+          <Property Name="ID_PESSOA_TIPO" Type="int" />
+          <Property Name="SEXO" Type="char" MaxLength="1" />
+          <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="RG" Type="varchar" MaxLength="9" />
+          <Property Name="DATA_NASCIMENTO" Type="date" />
+          <Property Name="CELULAR" Type="varchar" MaxLength="11" />
+          <Property Name="CELULAR2" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="P_Juridica">
+          <Key>
+            <PropertyRef Name="ID_PESSOA_JURIDICA" />
+          </Key>
+          <Property Name="ID_PESSOA_JURIDICA" Type="int" Nullable="false" />
+          <Property Name="ID_PESSOA_TIPO" Type="int" />
+          <Property Name="RAZAO_SOCIAL" Type="varchar" MaxLength="40" />
+          <Property Name="CNPJ" Type="varchar" MaxLength="14" />
+          <Property Name="NOME_CONTATO" Type="varchar" MaxLength="20" />
+          <Property Name="INSCRICAO_STADUAL" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="P_PessoaContatos">
+          <Key>
+            <PropertyRef Name="ID_CONTATOP" />
+          </Key>
+          <Property Name="ID_CONTATOP" Type="int" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="40" />
+          <Property Name="ABREVIACAO" Type="varchar" MaxLength="20" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="13" />
+          <Property Name="CELULAR" Type="varchar" MaxLength="11" />
+          <Property Name="OBSERVACAO" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="P_Produto">
+          <Key>
+            <PropertyRef Name="ID_PRODUTO" />
+          </Key>
+          <Property Name="ID_PRODUTO" Type="int" Nullable="false" />
+          <Property Name="ID_PRODUTO_MARCA" Type="int" />
+          <Property Name="ID_PRODUTO_GRUPO" Type="int" />
+          <Property Name="ID_VENDA" Type="int" />
+          <Property Name="ID_COMPRA" Type="int" />
+          <Property Name="ID_FORNECEDOR" Type="int" />
+          <Property Name="NOME" Type="varchar" MaxLength="40" />
+          <Property Name="CODIGO_BARRA" Type="varchar" MaxLength="40" />
+          <Property Name="REFERENCIA" Type="varchar" MaxLength="40" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="40" />
+          <Property Name="ESTOQUE_MINIMO" Type="int" />
+          <Property Name="ESTOQUE_MAXIMO" Type="int" />
+          <Property Name="PRECO_CUSTO" Type="float" />
+          <Property Name="PRECO_VENDA" Type="float" />
+        </EntityType>
+        <EntityType Name="P_ProdutoGrupo">
+          <Key>
+            <PropertyRef Name="ID_PRODUTO_GRUPO" />
+          </Key>
+          <Property Name="ID_PRODUTO_GRUPO" Type="int" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="P_ProdutoMarca">
+          <Key>
+            <PropertyRef Name="ID_PRODUTO_MARCA" />
+          </Key>
+          <Property Name="ID_PRODUTO_MARCA" Type="int" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MSOS.dbo.V_ItemVenda' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="V_ItemVenda">
+          <Property Name="ID_VENDA" Type="int" />
+          <Property Name="ID_PRODUTO" Type="int" />
+          <Property Name="QUANTIDADE" Type="int" />
+          <Property Name="VALOR" Type="float" />
+        </EntityType>-->
+        <EntityType Name="V_Venda">
+          <Key>
+            <PropertyRef Name="ID_VENDA" />
+          </Key>
+          <Property Name="ID_VENDA" Type="int" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="40" />
+          <Property Name="DATA_ENTREGA" Type="date" />
+        </EntityType>
+        <Association Name="FK_ID_CIDADE">
+          <End Role="P_Cidade" Type="Self.P_Cidade" Multiplicity="0..1" />
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_Cidade">
+              <PropertyRef Name="ID_CIDADE" />
+            </Principal>
+            <Dependent Role="P_ClientePessoa">
+              <PropertyRef Name="ID_CIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_COMPRA_PESSOA">
+          <End Role="C_Compra" Type="Self.C_Compra" Multiplicity="0..1" />
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="C_Compra">
+              <PropertyRef Name="ID_COMPRA" />
+            </Principal>
+            <Dependent Role="P_ClientePessoa">
+              <PropertyRef Name="ID_COMPRA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_CONTATOP">
+          <End Role="P_PessoaContatos" Type="Self.P_PessoaContatos" Multiplicity="0..1" />
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_PessoaContatos">
+              <PropertyRef Name="ID_CONTATOP" />
+            </Principal>
+            <Dependent Role="P_ClientePessoa">
+              <PropertyRef Name="ID_CONTATOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_ESTADO">
+          <End Role="P_Estado" Type="Self.P_Estado" Multiplicity="1" />
+          <End Role="P_Cidade" Type="Self.P_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_Estado">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="P_Cidade">
+              <PropertyRef Name="ID_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_FORNECEDOR">
+          <End Role="F_FornecedorPessoa" Type="Self.F_FornecedorPessoa" Multiplicity="0..1" />
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_FornecedorPessoa">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Principal>
+            <Dependent Role="P_Produto">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_FORNECEDORCONTATO">
+          <End Role="F_FornecedoresContatos" Type="Self.F_FornecedoresContatos" Multiplicity="1" />
+          <End Role="F_FornecedorPessoa" Type="Self.F_FornecedorPessoa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="F_FornecedoresContatos">
+              <PropertyRef Name="ID_CONTATOF" />
+            </Principal>
+            <Dependent Role="F_FornecedorPessoa">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'MSOS.dbo.C_ItemCompra' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ID_ITEM_COMPRA" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'MSOS.dbo.V_ItemVenda' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ID_ITEM_PRODUTO" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'MSOS.dbo.C_ItemCompra' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ID_ITEM_PRODUTO_" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'MSOS.dbo.O_ItemServico' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ID_ITEM_SERVICO_OSERVICO" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'MSOS.dbo.O_ItemServico' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ID_ITEM_SERVICO_SERVICO" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'MSOS.dbo.V_ItemVenda' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ID_ITEM_VENDA_VENDA" />-->
+        <Association Name="FK_ID_PESSOA_FISICA">
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="1" />
+          <End Role="P_Fisica" Type="Self.P_Fisica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="P_ClientePessoa">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="P_Fisica">
+              <PropertyRef Name="ID_PESSOA_FISICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PESSOA_JURIDICA">
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="1" />
+          <End Role="P_Juridica" Type="Self.P_Juridica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="P_ClientePessoa">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="P_Juridica">
+              <PropertyRef Name="ID_PESSOA_JURIDICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PESSOACLIENTE">
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="1" />
+          <End Role="O_OrdemServico" Type="Self.O_OrdemServico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_ClientePessoa">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="O_OrdemServico">
+              <PropertyRef Name="ID_PESSOA_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PRODUTO">
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="0..1" />
+          <End Role="O_Servico" Type="Self.O_Servico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_Produto">
+              <PropertyRef Name="ID_PRODUTO" />
+            </Principal>
+            <Dependent Role="O_Servico">
+              <PropertyRef Name="ID_PRODUTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PRODUTO_GRUPO">
+          <End Role="P_ProdutoGrupo" Type="Self.P_ProdutoGrupo" Multiplicity="0..1" />
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_ProdutoGrupo">
+              <PropertyRef Name="ID_PRODUTO_GRUPO" />
+            </Principal>
+            <Dependent Role="P_Produto">
+              <PropertyRef Name="ID_PRODUTO_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PRODUTO_MARCA">
+          <End Role="P_ProdutoMarca" Type="Self.P_ProdutoMarca" Multiplicity="0..1" />
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_ProdutoMarca">
+              <PropertyRef Name="ID_PRODUTO_MARCA" />
+            </Principal>
+            <Dependent Role="P_Produto">
+              <PropertyRef Name="ID_PRODUTO_MARCA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_TECNICO">
+          <End Role="G_Tecnicos" Type="Self.G_Tecnicos" Multiplicity="0..1" />
+          <End Role="O_OrdemServico" Type="Self.O_OrdemServico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_Tecnicos">
+              <PropertyRef Name="ID_TECNICO" />
+            </Principal>
+            <Dependent Role="O_OrdemServico">
+              <PropertyRef Name="ID_TECNICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MSOSModelStoreContainer">
+          <EntitySet Name="C_Compra" EntityType="Self.C_Compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="F_FornecedoresContatos" EntityType="Self.F_FornecedoresContatos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="F_FornecedorPessoa" EntityType="Self.F_FornecedorPessoa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_Tecnicos" EntityType="Self.G_Tecnicos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="O_OrdemServico" EntityType="Self.O_OrdemServico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="O_Servico" EntityType="Self.O_Servico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Cidade" EntityType="Self.P_Cidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_ClientePessoa" EntityType="Self.P_ClientePessoa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Estado" EntityType="Self.P_Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Fisica" EntityType="Self.P_Fisica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Juridica" EntityType="Self.P_Juridica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_PessoaContatos" EntityType="Self.P_PessoaContatos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Produto" EntityType="Self.P_Produto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_ProdutoGrupo" EntityType="Self.P_ProdutoGrupo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_ProdutoMarca" EntityType="Self.P_ProdutoMarca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_Venda" EntityType="Self.V_Venda" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ID_CIDADE" Association="Self.FK_ID_CIDADE">
+            <End Role="P_Cidade" EntitySet="P_Cidade" />
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_COMPRA_PESSOA" Association="Self.FK_ID_COMPRA_PESSOA">
+            <End Role="C_Compra" EntitySet="C_Compra" />
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_CONTATOP" Association="Self.FK_ID_CONTATOP">
+            <End Role="P_PessoaContatos" EntitySet="P_PessoaContatos" />
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_ESTADO" Association="Self.FK_ID_ESTADO">
+            <End Role="P_Estado" EntitySet="P_Estado" />
+            <End Role="P_Cidade" EntitySet="P_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_FORNECEDOR" Association="Self.FK_ID_FORNECEDOR">
+            <End Role="F_FornecedorPessoa" EntitySet="F_FornecedorPessoa" />
+            <End Role="P_Produto" EntitySet="P_Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_FORNECEDORCONTATO" Association="Self.FK_ID_FORNECEDORCONTATO">
+            <End Role="F_FornecedoresContatos" EntitySet="F_FornecedoresContatos" />
+            <End Role="F_FornecedorPessoa" EntitySet="F_FornecedorPessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PESSOA_FISICA" Association="Self.FK_ID_PESSOA_FISICA">
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+            <End Role="P_Fisica" EntitySet="P_Fisica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PESSOA_JURIDICA" Association="Self.FK_ID_PESSOA_JURIDICA">
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+            <End Role="P_Juridica" EntitySet="P_Juridica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PESSOACLIENTE" Association="Self.FK_ID_PESSOACLIENTE">
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+            <End Role="O_OrdemServico" EntitySet="O_OrdemServico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PRODUTO" Association="Self.FK_ID_PRODUTO">
+            <End Role="P_Produto" EntitySet="P_Produto" />
+            <End Role="O_Servico" EntitySet="O_Servico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PRODUTO_GRUPO" Association="Self.FK_ID_PRODUTO_GRUPO">
+            <End Role="P_ProdutoGrupo" EntitySet="P_ProdutoGrupo" />
+            <End Role="P_Produto" EntitySet="P_Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PRODUTO_MARCA" Association="Self.FK_ID_PRODUTO_MARCA">
+            <End Role="P_ProdutoMarca" EntitySet="P_ProdutoMarca" />
+            <End Role="P_Produto" EntitySet="P_Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_TECNICO" Association="Self.FK_ID_TECNICO">
+            <End Role="G_Tecnicos" EntitySet="G_Tecnicos" />
+            <End Role="O_OrdemServico" EntitySet="O_OrdemServico" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MSOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C_Compra">
+          <Key>
+            <PropertyRef Name="ID_COMPRA" />
+          </Key>
+          <Property Name="ID_COMPRA" Type="Int32" Nullable="false" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_EMISSA" Type="DateTime" Precision="0" />
+          <Property Name="DATA_ENTREGA" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="P_ClientePessoa" Relationship="Self.FK_ID_COMPRA_PESSOA" FromRole="C_Compra" ToRole="P_ClientePessoa" />
+        </EntityType>
+        <EntityType Name="F_FornecedoresContatos">
+          <Key>
+            <PropertyRef Name="ID_CONTATOF" />
+          </Key>
+          <Property Name="ID_CONTATOF" Type="Int32" Nullable="false" />
+          <Property Name="NOME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ABREVIACAO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="F_FornecedorPessoa" Relationship="Self.FK_ID_FORNECEDORCONTATO" FromRole="F_FornecedoresContatos" ToRole="F_FornecedorPessoa" />
+        </EntityType>
+        <EntityType Name="F_FornecedorPessoa">
+          <Key>
+            <PropertyRef Name="ID_FORNECEDOR" />
+          </Key>
+          <Property Name="ID_FORNECEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_CONTATOF" Type="Int32" />
+          <Property Name="NOME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOME_CONTATO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CARGO_CONTATO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CIDADE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONE2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="FAX_TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="TELEX_TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="SITUACAO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BAIRRO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CP_MUNICIPIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MUNICIPIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PAIS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESC_PAIS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NIVEL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="F_FornecedoresContatos" Relationship="Self.FK_ID_FORNECEDORCONTATO" FromRole="F_FornecedorPessoa" ToRole="F_FornecedoresContatos" />
+          <NavigationProperty Name="P_Produto" Relationship="Self.FK_ID_FORNECEDOR" FromRole="F_FornecedorPessoa" ToRole="P_Produto" />
+        </EntityType>
+        <EntityType Name="G_Tecnicos">
+          <Key>
+            <PropertyRef Name="ID_TECNICO" />
+          </Key>
+          <Property Name="ID_TECNICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ABREVIACAO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONE2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR2" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="SITUACAO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BAIRRO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RG" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_NASCIMENTO" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="O_OrdemServico" Relationship="Self.FK_ID_TECNICO" FromRole="G_Tecnicos" ToRole="O_OrdemServico" />
+        </EntityType>
+        <EntityType Name="O_OrdemServico">
+          <Key>
+            <PropertyRef Name="ID_ORDEM_SERVICO" />
+          </Key>
+          <Property Name="ID_ORDEM_SERVICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PESSOA_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="ID_SERVICO" Type="Int32" Nullable="false" />
+          <Property Name="NUMERO_OS" Type="Int32" />
+          <Property Name="ID_CONTATOP" Type="Int32" />
+          <Property Name="ID_TECNICO" Type="Int32" />
+          <Property Name="ORIGEM_CHAMADO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SERVICOS_EXECUTADOS" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="VALOR_OBRA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TECNICO_SERVICO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_INICIO" Type="DateTime" Precision="3" />
+          <Property Name="DATA_FINAL" Type="DateTime" Precision="3" />
+          <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="G_Tecnicos" Relationship="Self.FK_ID_TECNICO" FromRole="O_OrdemServico" ToRole="G_Tecnicos" />
+          <NavigationProperty Name="P_ClientePessoa" Relationship="Self.FK_ID_PESSOACLIENTE" FromRole="O_OrdemServico" ToRole="P_ClientePessoa" />
+        </EntityType>
+        <EntityType Name="O_Servico">
+          <Key>
+            <PropertyRef Name="ID_SERVICO" />
+          </Key>
+          <Property Name="ID_SERVICO" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUTO" Type="Int32" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="VALOR" Type="Double" />
+          <NavigationProperty Name="P_Produto" Relationship="Self.FK_ID_PRODUTO" FromRole="O_Servico" ToRole="P_Produto" />
+        </EntityType>
+        <EntityType Name="P_Cidade">
+          <Key>
+            <PropertyRef Name="ID_CIDADE" />
+          </Key>
+          <Property Name="ID_CIDADE" Type="Int32" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="SIGLA_CIDADE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="NOME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="P_ClientePessoa" Relationship="Self.FK_ID_CIDADE" FromRole="P_Cidade" ToRole="P_ClientePessoa" />
+          <NavigationProperty Name="P_Estado" Relationship="Self.FK_ID_ESTADO" FromRole="P_Cidade" ToRole="P_Estado" />
+        </EntityType>
+        <EntityType Name="P_ClientePessoa">
+          <Key>
+            <PropertyRef Name="ID_PESSOA" />
+          </Key>
+          <Property Name="ID_PESSOA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PESSOA_TIPO" Type="Int32" />
+          <Property Name="ID_CIDADE" Type="Int32" />
+          <Property Name="ID_COMPRA" Type="Int32" />
+          <Property Name="ID_CONTATOP" Type="Int32" />
+          <Property Name="ID_MS" Type="Int32" />
+          <Property Name="ID_OS" Type="Int32" />
+          <Property Name="NOME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONE2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="FAX_TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="TELEX_TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="SITUACAO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BAIRRO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CP_MUNICIPIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MUNICIPIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PAIS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESC_PAIS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NIVEL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="C_Compra" Relationship="Self.FK_ID_COMPRA_PESSOA" FromRole="P_ClientePessoa" ToRole="C_Compra" />
+          <NavigationProperty Name="O_OrdemServico" Relationship="Self.FK_ID_PESSOACLIENTE" FromRole="P_ClientePessoa" ToRole="O_OrdemServico" />
+          <NavigationProperty Name="P_Cidade" Relationship="Self.FK_ID_CIDADE" FromRole="P_ClientePessoa" ToRole="P_Cidade" />
+          <NavigationProperty Name="P_PessoaContatos" Relationship="Self.FK_ID_CONTATOP" FromRole="P_ClientePessoa" ToRole="P_PessoaContatos" />
+          <NavigationProperty Name="P_Fisica" Relationship="Self.FK_ID_PESSOA_FISICA" FromRole="P_ClientePessoa" ToRole="P_Fisica" />
+          <NavigationProperty Name="P_Juridica" Relationship="Self.FK_ID_PESSOA_JURIDICA" FromRole="P_ClientePessoa" ToRole="P_Juridica" />
+        </EntityType>
+        <EntityType Name="P_Estado">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="SIGLA_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="NOME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="P_Cidade" Relationship="Self.FK_ID_ESTADO" FromRole="P_Estado" ToRole="P_Cidade" />
+        </EntityType>
+        <EntityType Name="P_Fisica">
+          <Key>
+            <PropertyRef Name="ID_PESSOA_FISICA" />
+          </Key>
+          <Property Name="ID_PESSOA_FISICA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PESSOA_TIPO" Type="Int32" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RG" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_NASCIMENTO" Type="DateTime" Precision="0" />
+          <Property Name="CELULAR" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR2" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="P_ClientePessoa" Relationship="Self.FK_ID_PESSOA_FISICA" FromRole="P_Fisica" ToRole="P_ClientePessoa" />
+        </EntityType>
+        <EntityType Name="P_Juridica">
+          <Key>
+            <PropertyRef Name="ID_PESSOA_JURIDICA" />
+          </Key>
+          <Property Name="ID_PESSOA_JURIDICA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PESSOA_TIPO" Type="Int32" />
+          <Property Name="RAZAO_SOCIAL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CNPJ" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_CONTATO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="INSCRICAO_STADUAL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="P_ClientePessoa" Relationship="Self.FK_ID_PESSOA_JURIDICA" FromRole="P_Juridica" ToRole="P_ClientePessoa" />
+        </EntityType>
+        <EntityType Name="P_PessoaContatos">
+          <Key>
+            <PropertyRef Name="ID_CONTATOP" />
+          </Key>
+          <Property Name="ID_CONTATOP" Type="Int32" Nullable="false" />
+          <Property Name="NOME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ABREVIACAO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="P_ClientePessoa" Relationship="Self.FK_ID_CONTATOP" FromRole="P_PessoaContatos" ToRole="P_ClientePessoa" />
+        </EntityType>
+        <EntityType Name="P_Produto">
+          <Key>
+            <PropertyRef Name="ID_PRODUTO" />
+          </Key>
+          <Property Name="ID_PRODUTO" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUTO_MARCA" Type="Int32" />
+          <Property Name="ID_PRODUTO_GRUPO" Type="Int32" />
+          <Property Name="ID_VENDA" Type="Int32" />
+          <Property Name="ID_COMPRA" Type="Int32" />
+          <Property Name="ID_FORNECEDOR" Type="Int32" />
+          <Property Name="NOME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_BARRA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCIA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ESTOQUE_MINIMO" Type="Int32" />
+          <Property Name="ESTOQUE_MAXIMO" Type="Int32" />
+          <Property Name="PRECO_CUSTO" Type="Double" />
+          <Property Name="PRECO_VENDA" Type="Double" />
+          <NavigationProperty Name="F_FornecedorPessoa" Relationship="Self.FK_ID_FORNECEDOR" FromRole="P_Produto" ToRole="F_FornecedorPessoa" />
+          <NavigationProperty Name="O_Servico" Relationship="Self.FK_ID_PRODUTO" FromRole="P_Produto" ToRole="O_Servico" />
+          <NavigationProperty Name="P_ProdutoGrupo" Relationship="Self.FK_ID_PRODUTO_GRUPO" FromRole="P_Produto" ToRole="P_ProdutoGrupo" />
+          <NavigationProperty Name="P_ProdutoMarca" Relationship="Self.FK_ID_PRODUTO_MARCA" FromRole="P_Produto" ToRole="P_ProdutoMarca" />
+        </EntityType>
+        <EntityType Name="P_ProdutoGrupo">
+          <Key>
+            <PropertyRef Name="ID_PRODUTO_GRUPO" />
+          </Key>
+          <Property Name="ID_PRODUTO_GRUPO" Type="Int32" Nullable="false" />
+          <Property Name="NOME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="P_Produto" Relationship="Self.FK_ID_PRODUTO_GRUPO" FromRole="P_ProdutoGrupo" ToRole="P_Produto" />
+        </EntityType>
+        <EntityType Name="P_ProdutoMarca">
+          <Key>
+            <PropertyRef Name="ID_PRODUTO_MARCA" />
+          </Key>
+          <Property Name="ID_PRODUTO_MARCA" Type="Int32" Nullable="false" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="P_Produto" Relationship="Self.FK_ID_PRODUTO_MARCA" FromRole="P_ProdutoMarca" ToRole="P_Produto" />
+        </EntityType>
+        <EntityType Name="V_Venda">
+          <Key>
+            <PropertyRef Name="ID_VENDA" />
+          </Key>
+          <Property Name="ID_VENDA" Type="Int32" Nullable="false" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_ENTREGA" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_ID_COMPRA_PESSOA">
+          <End Role="C_Compra" Type="Self.C_Compra" Multiplicity="0..1" />
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="C_Compra">
+              <PropertyRef Name="ID_COMPRA" />
+            </Principal>
+            <Dependent Role="P_ClientePessoa">
+              <PropertyRef Name="ID_COMPRA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_FORNECEDORCONTATO">
+          <End Role="F_FornecedoresContatos" Type="Self.F_FornecedoresContatos" Multiplicity="1" />
+          <End Role="F_FornecedorPessoa" Type="Self.F_FornecedorPessoa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="F_FornecedoresContatos">
+              <PropertyRef Name="ID_CONTATOF" />
+            </Principal>
+            <Dependent Role="F_FornecedorPessoa">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_FORNECEDOR">
+          <End Role="F_FornecedorPessoa" Type="Self.F_FornecedorPessoa" Multiplicity="0..1" />
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_FornecedorPessoa">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Principal>
+            <Dependent Role="P_Produto">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_TECNICO">
+          <End Role="G_Tecnicos" Type="Self.G_Tecnicos" Multiplicity="0..1" />
+          <End Role="O_OrdemServico" Type="Self.O_OrdemServico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_Tecnicos">
+              <PropertyRef Name="ID_TECNICO" />
+            </Principal>
+            <Dependent Role="O_OrdemServico">
+              <PropertyRef Name="ID_TECNICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PESSOACLIENTE">
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="1" />
+          <End Role="O_OrdemServico" Type="Self.O_OrdemServico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_ClientePessoa">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="O_OrdemServico">
+              <PropertyRef Name="ID_PESSOA_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PRODUTO">
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="0..1" />
+          <End Role="O_Servico" Type="Self.O_Servico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_Produto">
+              <PropertyRef Name="ID_PRODUTO" />
+            </Principal>
+            <Dependent Role="O_Servico">
+              <PropertyRef Name="ID_PRODUTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_CIDADE">
+          <End Role="P_Cidade" Type="Self.P_Cidade" Multiplicity="0..1" />
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_Cidade">
+              <PropertyRef Name="ID_CIDADE" />
+            </Principal>
+            <Dependent Role="P_ClientePessoa">
+              <PropertyRef Name="ID_CIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_ESTADO">
+          <End Role="P_Estado" Type="Self.P_Estado" Multiplicity="1" />
+          <End Role="P_Cidade" Type="Self.P_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_Estado">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="P_Cidade">
+              <PropertyRef Name="ID_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_CONTATOP">
+          <End Role="P_PessoaContatos" Type="Self.P_PessoaContatos" Multiplicity="0..1" />
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_PessoaContatos">
+              <PropertyRef Name="ID_CONTATOP" />
+            </Principal>
+            <Dependent Role="P_ClientePessoa">
+              <PropertyRef Name="ID_CONTATOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PESSOA_FISICA">
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="1" />
+          <End Role="P_Fisica" Type="Self.P_Fisica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="P_ClientePessoa">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="P_Fisica">
+              <PropertyRef Name="ID_PESSOA_FISICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PESSOA_JURIDICA">
+          <End Role="P_ClientePessoa" Type="Self.P_ClientePessoa" Multiplicity="1" />
+          <End Role="P_Juridica" Type="Self.P_Juridica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="P_ClientePessoa">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="P_Juridica">
+              <PropertyRef Name="ID_PESSOA_JURIDICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PRODUTO_GRUPO">
+          <End Role="P_ProdutoGrupo" Type="Self.P_ProdutoGrupo" Multiplicity="0..1" />
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_ProdutoGrupo">
+              <PropertyRef Name="ID_PRODUTO_GRUPO" />
+            </Principal>
+            <Dependent Role="P_Produto">
+              <PropertyRef Name="ID_PRODUTO_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_PRODUTO_MARCA">
+          <End Role="P_ProdutoMarca" Type="Self.P_ProdutoMarca" Multiplicity="0..1" />
+          <End Role="P_Produto" Type="Self.P_Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="P_ProdutoMarca">
+              <PropertyRef Name="ID_PRODUTO_MARCA" />
+            </Principal>
+            <Dependent Role="P_Produto">
+              <PropertyRef Name="ID_PRODUTO_MARCA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MSOSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C_Compra" EntityType="Self.C_Compra" />
+          <EntitySet Name="F_FornecedoresContatos" EntityType="Self.F_FornecedoresContatos" />
+          <EntitySet Name="F_FornecedorPessoa" EntityType="Self.F_FornecedorPessoa" />
+          <EntitySet Name="G_Tecnicos" EntityType="Self.G_Tecnicos" />
+          <EntitySet Name="O_OrdemServico" EntityType="Self.O_OrdemServico" />
+          <EntitySet Name="O_Servico" EntityType="Self.O_Servico" />
+          <EntitySet Name="P_Cidade" EntityType="Self.P_Cidade" />
+          <EntitySet Name="P_ClientePessoa" EntityType="Self.P_ClientePessoa" />
+          <EntitySet Name="P_Estado" EntityType="Self.P_Estado" />
+          <EntitySet Name="P_Fisica" EntityType="Self.P_Fisica" />
+          <EntitySet Name="P_Juridica" EntityType="Self.P_Juridica" />
+          <EntitySet Name="P_PessoaContatos" EntityType="Self.P_PessoaContatos" />
+          <EntitySet Name="P_Produto" EntityType="Self.P_Produto" />
+          <EntitySet Name="P_ProdutoGrupo" EntityType="Self.P_ProdutoGrupo" />
+          <EntitySet Name="P_ProdutoMarca" EntityType="Self.P_ProdutoMarca" />
+          <EntitySet Name="V_Venda" EntityType="Self.V_Venda" />
+          <AssociationSet Name="FK_ID_COMPRA_PESSOA" Association="Self.FK_ID_COMPRA_PESSOA">
+            <End Role="C_Compra" EntitySet="C_Compra" />
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_FORNECEDORCONTATO" Association="Self.FK_ID_FORNECEDORCONTATO">
+            <End Role="F_FornecedoresContatos" EntitySet="F_FornecedoresContatos" />
+            <End Role="F_FornecedorPessoa" EntitySet="F_FornecedorPessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_FORNECEDOR" Association="Self.FK_ID_FORNECEDOR">
+            <End Role="F_FornecedorPessoa" EntitySet="F_FornecedorPessoa" />
+            <End Role="P_Produto" EntitySet="P_Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_TECNICO" Association="Self.FK_ID_TECNICO">
+            <End Role="G_Tecnicos" EntitySet="G_Tecnicos" />
+            <End Role="O_OrdemServico" EntitySet="O_OrdemServico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PESSOACLIENTE" Association="Self.FK_ID_PESSOACLIENTE">
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+            <End Role="O_OrdemServico" EntitySet="O_OrdemServico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PRODUTO" Association="Self.FK_ID_PRODUTO">
+            <End Role="P_Produto" EntitySet="P_Produto" />
+            <End Role="O_Servico" EntitySet="O_Servico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_CIDADE" Association="Self.FK_ID_CIDADE">
+            <End Role="P_Cidade" EntitySet="P_Cidade" />
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_ESTADO" Association="Self.FK_ID_ESTADO">
+            <End Role="P_Estado" EntitySet="P_Estado" />
+            <End Role="P_Cidade" EntitySet="P_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_CONTATOP" Association="Self.FK_ID_CONTATOP">
+            <End Role="P_PessoaContatos" EntitySet="P_PessoaContatos" />
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PESSOA_FISICA" Association="Self.FK_ID_PESSOA_FISICA">
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+            <End Role="P_Fisica" EntitySet="P_Fisica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PESSOA_JURIDICA" Association="Self.FK_ID_PESSOA_JURIDICA">
+            <End Role="P_ClientePessoa" EntitySet="P_ClientePessoa" />
+            <End Role="P_Juridica" EntitySet="P_Juridica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PRODUTO_GRUPO" Association="Self.FK_ID_PRODUTO_GRUPO">
+            <End Role="P_ProdutoGrupo" EntitySet="P_ProdutoGrupo" />
+            <End Role="P_Produto" EntitySet="P_Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_PRODUTO_MARCA" Association="Self.FK_ID_PRODUTO_MARCA">
+            <End Role="P_ProdutoMarca" EntitySet="P_ProdutoMarca" />
+            <End Role="P_Produto" EntitySet="P_Produto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MSOSModelStoreContainer" CdmEntityContainer="MSOSEntities">
+          <EntitySetMapping Name="C_Compra">
+            <EntityTypeMapping TypeName="MSOSModel.C_Compra">
+              <MappingFragment StoreEntitySet="C_Compra">
+                <ScalarProperty Name="ID_COMPRA" ColumnName="ID_COMPRA" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="DATA_EMISSA" ColumnName="DATA_EMISSA" />
+                <ScalarProperty Name="DATA_ENTREGA" ColumnName="DATA_ENTREGA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="F_FornecedoresContatos">
+            <EntityTypeMapping TypeName="MSOSModel.F_FornecedoresContatos">
+              <MappingFragment StoreEntitySet="F_FornecedoresContatos">
+                <ScalarProperty Name="ID_CONTATOF" ColumnName="ID_CONTATOF" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ABREVIACAO" ColumnName="ABREVIACAO" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+                <ScalarProperty Name="OBSERVACAO" ColumnName="OBSERVACAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="F_FornecedorPessoa">
+            <EntityTypeMapping TypeName="MSOSModel.F_FornecedorPessoa">
+              <MappingFragment StoreEntitySet="F_FornecedorPessoa">
+                <ScalarProperty Name="ID_FORNECEDOR" ColumnName="ID_FORNECEDOR" />
+                <ScalarProperty Name="ID_CONTATOF" ColumnName="ID_CONTATOF" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="NOME_CONTATO" ColumnName="NOME_CONTATO" />
+                <ScalarProperty Name="CARGO_CONTATO" ColumnName="CARGO_CONTATO" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="TELEFONE2" ColumnName="TELEFONE2" />
+                <ScalarProperty Name="FAX_TELEFONE" ColumnName="FAX_TELEFONE" />
+                <ScalarProperty Name="TELEX_TELEFONE" ColumnName="TELEX_TELEFONE" />
+                <ScalarProperty Name="SITUACAO" ColumnName="SITUACAO" />
+                <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="OBSERVACAO" ColumnName="OBSERVACAO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="CP_MUNICIPIO" ColumnName="CP_MUNICIPIO" />
+                <ScalarProperty Name="MUNICIPIO" ColumnName="MUNICIPIO" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+                <ScalarProperty Name="DESC_PAIS" ColumnName="DESC_PAIS" />
+                <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_Tecnicos">
+            <EntityTypeMapping TypeName="MSOSModel.G_Tecnicos">
+              <MappingFragment StoreEntitySet="G_Tecnicos">
+                <ScalarProperty Name="ID_TECNICO" ColumnName="ID_TECNICO" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ABREVIACAO" ColumnName="ABREVIACAO" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="TELEFONE2" ColumnName="TELEFONE2" />
+                <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+                <ScalarProperty Name="CELULAR2" ColumnName="CELULAR2" />
+                <ScalarProperty Name="SITUACAO" ColumnName="SITUACAO" />
+                <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="OBSERVACAO" ColumnName="OBSERVACAO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="DATA_NASCIMENTO" ColumnName="DATA_NASCIMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="O_OrdemServico">
+            <EntityTypeMapping TypeName="MSOSModel.O_OrdemServico">
+              <MappingFragment StoreEntitySet="O_OrdemServico">
+                <ScalarProperty Name="ID_ORDEM_SERVICO" ColumnName="ID_ORDEM_SERVICO" />
+                <ScalarProperty Name="ID_PESSOA_CLIENTE" ColumnName="ID_PESSOA_CLIENTE" />
+                <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
+                <ScalarProperty Name="NUMERO_OS" ColumnName="NUMERO_OS" />
+                <ScalarProperty Name="ID_CONTATOP" ColumnName="ID_CONTATOP" />
+                <ScalarProperty Name="ID_TECNICO" ColumnName="ID_TECNICO" />
+                <ScalarProperty Name="ORIGEM_CHAMADO" ColumnName="ORIGEM_CHAMADO" />
+                <ScalarProperty Name="SERVICOS_EXECUTADOS" ColumnName="SERVICOS_EXECUTADOS" />
+                <ScalarProperty Name="VALOR_OBRA" ColumnName="VALOR_OBRA" />
+                <ScalarProperty Name="TECNICO_SERVICO" ColumnName="TECNICO_SERVICO" />
+                <ScalarProperty Name="DATA_INICIO" ColumnName="DATA_INICIO" />
+                <ScalarProperty Name="DATA_FINAL" ColumnName="DATA_FINAL" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="O_Servico">
+            <EntityTypeMapping TypeName="MSOSModel.O_Servico">
+              <MappingFragment StoreEntitySet="O_Servico">
+                <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
+                <ScalarProperty Name="ID_PRODUTO" ColumnName="ID_PRODUTO" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Cidade">
+            <EntityTypeMapping TypeName="MSOSModel.P_Cidade">
+              <MappingFragment StoreEntitySet="P_Cidade">
+                <ScalarProperty Name="ID_CIDADE" ColumnName="ID_CIDADE" />
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+                <ScalarProperty Name="SIGLA_CIDADE" ColumnName="SIGLA_CIDADE" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_ClientePessoa">
+            <EntityTypeMapping TypeName="MSOSModel.P_ClientePessoa">
+              <MappingFragment StoreEntitySet="P_ClientePessoa">
+                <ScalarProperty Name="ID_PESSOA" ColumnName="ID_PESSOA" />
+                <ScalarProperty Name="ID_PESSOA_TIPO" ColumnName="ID_PESSOA_TIPO" />
+                <ScalarProperty Name="ID_CIDADE" ColumnName="ID_CIDADE" />
+                <ScalarProperty Name="ID_COMPRA" ColumnName="ID_COMPRA" />
+                <ScalarProperty Name="ID_CONTATOP" ColumnName="ID_CONTATOP" />
+                <ScalarProperty Name="ID_MS" ColumnName="ID_MS" />
+                <ScalarProperty Name="ID_OS" ColumnName="ID_OS" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="TELEFONE2" ColumnName="TELEFONE2" />
+                <ScalarProperty Name="FAX_TELEFONE" ColumnName="FAX_TELEFONE" />
+                <ScalarProperty Name="TELEX_TELEFONE" ColumnName="TELEX_TELEFONE" />
+                <ScalarProperty Name="SITUACAO" ColumnName="SITUACAO" />
+                <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="OBSERVACAO" ColumnName="OBSERVACAO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="CP_MUNICIPIO" ColumnName="CP_MUNICIPIO" />
+                <ScalarProperty Name="MUNICIPIO" ColumnName="MUNICIPIO" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+                <ScalarProperty Name="DESC_PAIS" ColumnName="DESC_PAIS" />
+                <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Estado">
+            <EntityTypeMapping TypeName="MSOSModel.P_Estado">
+              <MappingFragment StoreEntitySet="P_Estado">
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+                <ScalarProperty Name="SIGLA_ESTADO" ColumnName="SIGLA_ESTADO" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Fisica">
+            <EntityTypeMapping TypeName="MSOSModel.P_Fisica">
+              <MappingFragment StoreEntitySet="P_Fisica">
+                <ScalarProperty Name="ID_PESSOA_FISICA" ColumnName="ID_PESSOA_FISICA" />
+                <ScalarProperty Name="ID_PESSOA_TIPO" ColumnName="ID_PESSOA_TIPO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="DATA_NASCIMENTO" ColumnName="DATA_NASCIMENTO" />
+                <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+                <ScalarProperty Name="CELULAR2" ColumnName="CELULAR2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Juridica">
+            <EntityTypeMapping TypeName="MSOSModel.P_Juridica">
+              <MappingFragment StoreEntitySet="P_Juridica">
+                <ScalarProperty Name="ID_PESSOA_JURIDICA" ColumnName="ID_PESSOA_JURIDICA" />
+                <ScalarProperty Name="ID_PESSOA_TIPO" ColumnName="ID_PESSOA_TIPO" />
+                <ScalarProperty Name="RAZAO_SOCIAL" ColumnName="RAZAO_SOCIAL" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="NOME_CONTATO" ColumnName="NOME_CONTATO" />
+                <ScalarProperty Name="INSCRICAO_STADUAL" ColumnName="INSCRICAO_STADUAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_PessoaContatos">
+            <EntityTypeMapping TypeName="MSOSModel.P_PessoaContatos">
+              <MappingFragment StoreEntitySet="P_PessoaContatos">
+                <ScalarProperty Name="ID_CONTATOP" ColumnName="ID_CONTATOP" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ABREVIACAO" ColumnName="ABREVIACAO" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+                <ScalarProperty Name="OBSERVACAO" ColumnName="OBSERVACAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Produto">
+            <EntityTypeMapping TypeName="MSOSModel.P_Produto">
+              <MappingFragment StoreEntitySet="P_Produto">
+                <ScalarProperty Name="ID_PRODUTO" ColumnName="ID_PRODUTO" />
+                <ScalarProperty Name="ID_PRODUTO_MARCA" ColumnName="ID_PRODUTO_MARCA" />
+                <ScalarProperty Name="ID_PRODUTO_GRUPO" ColumnName="ID_PRODUTO_GRUPO" />
+                <ScalarProperty Name="ID_VENDA" ColumnName="ID_VENDA" />
+                <ScalarProperty Name="ID_COMPRA" ColumnName="ID_COMPRA" />
+                <ScalarProperty Name="ID_FORNECEDOR" ColumnName="ID_FORNECEDOR" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="CODIGO_BARRA" ColumnName="CODIGO_BARRA" />
+                <ScalarProperty Name="REFERENCIA" ColumnName="REFERENCIA" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="ESTOQUE_MINIMO" ColumnName="ESTOQUE_MINIMO" />
+                <ScalarProperty Name="ESTOQUE_MAXIMO" ColumnName="ESTOQUE_MAXIMO" />
+                <ScalarProperty Name="PRECO_CUSTO" ColumnName="PRECO_CUSTO" />
+                <ScalarProperty Name="PRECO_VENDA" ColumnName="PRECO_VENDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_ProdutoGrupo">
+            <EntityTypeMapping TypeName="MSOSModel.P_ProdutoGrupo">
+              <MappingFragment StoreEntitySet="P_ProdutoGrupo">
+                <ScalarProperty Name="ID_PRODUTO_GRUPO" ColumnName="ID_PRODUTO_GRUPO" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_ProdutoMarca">
+            <EntityTypeMapping TypeName="MSOSModel.P_ProdutoMarca">
+              <MappingFragment StoreEntitySet="P_ProdutoMarca">
+                <ScalarProperty Name="ID_PRODUTO_MARCA" ColumnName="ID_PRODUTO_MARCA" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Venda">
+            <EntityTypeMapping TypeName="MSOSModel.V_Venda">
+              <MappingFragment StoreEntitySet="V_Venda">
+                <ScalarProperty Name="ID_VENDA" ColumnName="ID_VENDA" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="DATA_ENTREGA" ColumnName="DATA_ENTREGA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
