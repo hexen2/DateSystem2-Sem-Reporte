@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace MSOS {
+namespace DateSystem {
     
     
     /// <summary>
@@ -15778,7 +15778,7 @@ namespace MSOS {
         }
     }
 }
-namespace MSOS.MSOSDataSetTableAdapters {
+namespace DateSystem.MSOSDataSetTableAdapters {
     
     
     /// <summary>
@@ -15951,7 +15951,7 @@ SELECT ID_COMPRA, DESCRICAO, DATA_EMISSA, DATA_ENTREGA FROM C_Compra WHERE (ID_C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16318,7 +16318,7 @@ SELECT ID_COMPRA, DESCRICAO, DATA_EMISSA, DATA_ENTREGA FROM C_Compra WHERE (ID_C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16633,7 +16633,7 @@ SELECT ID_CEP, CEP, TIPO_LOGRADOURO, ENDERECO, NUMERO, COMPLEMENTO, BAIRRO, CIDA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17229,7 +17229,7 @@ SELECT ID_FORNECEDOR_FISICA, ID_FORNECEDOR_TIPO, SEXO, CPF, RG, DATA_NASCIMENTO,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17762,7 +17762,7 @@ SELECT ID_CONTATOF, NOME, ABREVIACAO, TELEFONE, CELULAR, OBSERVACAO FROM F_Forne
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18409,7 +18409,7 @@ SELECT ID_FORNECEDOR, ID_CONTATOF, ID_TIPO_FORNECEDOR, NOME, NOME_CONTATO, CARGO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19510,7 +19510,7 @@ SELECT ID_FORNECEDOR_JURIDICA, ID_FORNECEDOR_TIPO, RAZAO_SOCIAL, CNPJ, NOME_CONT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20067,7 +20067,7 @@ SELECT ID_TECNICO, NOME, ABREVIACAO, ENDERECO, TELEFONE, TELEFONE2, CELULAR, CEL
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20885,7 +20885,7 @@ SELECT ID_TECNICO, NOME, ABREVIACAO, ENDERECO, TELEFONE, TELEFONE2, CELULAR, CEL
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21239,7 +21239,7 @@ SELECT ID_ORDEM_SERVICO, ID_PESSOA_CLIENTE, ID_SERVICO, NUMERO_OS, ID_CONTATOP, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21890,7 +21890,7 @@ SELECT ID_SERVICO, ID_PRODUTO, DESCRICAO, VALOR FROM O_Servico WHERE (ID_SERVICO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22319,7 +22319,7 @@ SELECT ID_CEP, CEP, TIPO_LOGRADOURO, ENDERECO, NUMERO, COMPLEMENTO, BAIRRO, CIDA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22888,7 +22888,7 @@ SELECT ID_CIDADE, ID_ESTADO, SIGLA_CIDADE, NOME FROM P_Cidade WHERE (ID_CIDADE =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23462,7 +23462,7 @@ SELECT ID_PESSOA, ID_PESSOA_TIPO, ID_CIDADE, ID_COMPRA, ID_CONTATOP, ID_MS, ID_O
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24580,7 +24580,7 @@ SELECT ID_ESTADO, SIGLA_ESTADO, NOME FROM P_Estado WHERE (ID_ESTADO = @ID_ESTADO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24972,7 +24972,7 @@ SELECT ID_PESSOA_FISICA, ID_PESSOA_TIPO, SEXO, CPF, RG, DATA_NASCIMENTO, CELULAR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25505,7 +25505,7 @@ SELECT ID_PESSOA_JURIDICA, ID_PESSOA_TIPO, RAZAO_SOCIAL, CNPJ, NOME_CONTATO, INS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25970,7 +25970,7 @@ SELECT ID_CONTATOP, NOME, ABREVIACAO, TELEFONE, CELULAR, OBSERVACAO FROM P_Pesso
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26515,7 +26515,7 @@ SELECT ID_PRODUTO, ID_PRODUTO_MARCA, ID_PRODUTO_GRUPO, ID_VENDA, ID_COMPRA, ID_F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27235,7 +27235,7 @@ SELECT ID_PRODUTO_GRUPO, NOME FROM P_ProdutoGrupo WHERE (ID_PRODUTO_GRUPO = @ID_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27562,7 +27562,7 @@ SELECT ID_PRODUTO_MARCA, DESCRICAO FROM P_ProdutoMarca WHERE (ID_PRODUTO_MARCA =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27873,7 +27873,7 @@ SELECT ID_PRODUTO_MARCA, DESCRICAO FROM P_ProdutoMarca WHERE (ID_PRODUTO_MARCA =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28147,7 +28147,7 @@ SELECT ID_VENDA, DESCRICAO, DATA_ENTREGA FROM V_Venda WHERE (ID_VENDA = @ID_VEND
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MSOS.Properties.Settings.Default.MSOSConnectionString;
+            this._connection.ConnectionString = global::DateSystem.Properties.Settings.Default.DateSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

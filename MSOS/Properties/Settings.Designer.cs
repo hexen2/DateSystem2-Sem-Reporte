@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MSOS.Properties {
+namespace DateSystem.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -28,9 +28,9 @@ namespace MSOS.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PROGRAMAS;Initial Catalog=MSOS;Persist Security Info=True;User ID=sa;" +
             "Password=dellm@ster2016")]
-        public string MSOSConnectionString {
+        public string DateSystemConnectionString {
             get {
-                return ((string)(this["MSOSConnectionString"]));
+                return ((string)(this["DateSystemConnectionString"]));
             }
         }
     }
